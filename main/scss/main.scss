@@ -1,0 +1,23 @@
+
+*,::before,
+::after
+{
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0px
+}
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+.header-logo{
+    height:70px;
+    text-align: center;
+    border-bottom: 2px solid #90a4ae;
+    box-shadow: 0 3px 3px #90a4ae;
+}
+.logo{
+    width: 200px;
+    margin-top: 20px;
+}
