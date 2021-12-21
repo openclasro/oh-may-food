@@ -4,20 +4,36 @@
 {
   box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
-body{
+body {
+    font-family: "Roboto", sans-serif;
     margin: 0px
 }
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 .header-logo{
-    height:70px;
+    font-family: "shrikhand",cursive;
+    height:6git0px;
     text-align: center;
-    border-bottom: 2px solid #90a4ae;
-    box-shadow: 0 3px 3px #90a4ae;
+    border-bottom: 1px solid #637178;
+    box-shadow: 0 5px 5px #637178;
 }
 .logo{
-    width: 200px;
+    width: 150px;
     margin-top: 20px;
 }
+.city{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #f3f3f3;
+    padding: 1rem;
+}
+.titre1{
+    font-size: 1rem;
+    text-align: center;
+    margin: 0px;
+}
+
