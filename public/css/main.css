@@ -28,7 +28,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background-color: #f3f3f3;
+  background-color: #eaeaea;
   padding: 1rem;
 }
 
@@ -36,6 +36,29 @@ body {
   font-size: 1rem;
   text-align: center;
   margin: 0px;
+}
+
+.explorer {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f3f3f3;
+}
+
+.explorer button {
+  border-radius: 2rem;
+  color: white;
+  padding: 1rem 2rem;
+  margin-top: 0.5rem;
+  background-image: linear-gradient(to top, #9556dc, #ff79da);
+  font-size: 1rem;
+  border: none;
+  box-shadow: 2px 1px 16px -3px #000000;
+  transition: all 200ms;
+}
+
+.explorer button:hover {
+  transform: scale(1.2);
+  opacity: 0.9;
 }
 
 /*# sourceMappingURL=main.css.map */
