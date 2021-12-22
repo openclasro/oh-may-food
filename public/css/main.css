@@ -10,9 +10,13 @@ body {
   margin: 0px;
 }
 
+section {
+  margin: 0 1rem;
+}
+
 .header-logo {
   font-family: "shrikhand", cursive;
-  height: 6git0px;
+  height: 60px;
   text-align: center;
   border-bottom: 1px solid #637178;
   box-shadow: 0 5px 5px #637178;
@@ -31,8 +35,7 @@ body {
   background-color: #eaeaea;
   padding: 1rem;
 }
-
-.titre1 {
+.city h1 {
   font-size: 1rem;
   text-align: center;
   margin: 0px;
@@ -43,7 +46,6 @@ body {
   text-align: center;
   background-color: #f3f3f3;
 }
-
 .explorer button {
   border-radius: 2rem;
   color: white;
@@ -52,13 +54,56 @@ body {
   background-image: linear-gradient(to top, #9556dc, #ff79da);
   font-size: 1rem;
   border: none;
-  box-shadow: 2px 1px 16px -3px #000000;
   transition: all 200ms;
+  box-shadow: 2px 1px 8px -3px #000000;
+}
+.explorer button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
-.explorer button:hover {
-  transform: scale(1.2);
-  opacity: 0.9;
+.list {
+  counter-reset: etapes;
+  padding-inline-start: 1rem;
+}
+.list ol {
+  display: grid;
+  grid-row-gap: 1rem;
+  padding-inline-start: 0;
+  padding-inline-end: 1rem;
+}
+.list li {
+  position: relative;
+  font-family: Roboto;
+  font-weight: 700;
+  background-color: #f6f6f6;
+  padding: 1rem 2rem;
+  text-align: center;
+  gap: 1rem;
+  list-style: none;
+  border-radius: 1rem;
+  box-shadow: 2px 1px 8px -3px #000000;
+}
+.list li::before {
+  content: counter(etapes);
+  counter-increment: etapes;
+  color: white;
+  background-color: purple;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 1rem;
+  left: -1rem;
+}
+.list li:hover {
+  transform: scale(1.02);
+}
+.list li i.fas {
+  margin-right: 1rem;
+  color: gray;
 }
 
 /*# sourceMappingURL=main.css.map */

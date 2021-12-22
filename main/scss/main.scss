@@ -1,62 +1,8 @@
 
-*,::before,
-::after
-{
-  box-sizing: border-box;
-}
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import "./base/base";
+@import "./layout/header";
+@import "./layout/logo";
+@import "./layout/city";
+@import "./layout/explorer";
+@import "./layout/list";
 
-body {
-    font-family: "Roboto", sans-serif;
-    margin: 0px
-}
-
-.header-logo{
-    font-family: "shrikhand",cursive;
-    height:6git0px;
-    text-align: center;
-    border-bottom: 1px solid #637178;
-    box-shadow: 0 5px 5px #637178;
-}
-.logo{
-    width: 150px;
-    margin-top: 20px;
-}
-.city{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    background-color: #eaeaea;;
-    padding: 1rem;
-}
-.titre1{
-    font-size: 1rem;
-    text-align: center;
-    margin: 0px;
-}
-
-
-.explorer{
-    padding: 2rem;
-    text-align: center;
-    background-color: #f3f3f3;
-}
-
-.explorer button{
-    border-radius: 2rem;
-    color: white;
-    padding: 1rem 2rem;
-    margin-top: 0.5rem;
-    background-image: linear-gradient(to top, #9556dc, #ff79da);
-    font-size: 1rem;
-    border: none;
-    box-shadow: 2px 1px 16px -3px #000000;
-    transition: all 200ms;
-}
-
-.explorer button:hover{
-    transform: scale(1.2);
-    opacity: 0.9;
-}
