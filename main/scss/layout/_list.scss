@@ -1,13 +1,19 @@
 
 @import "../utils/zoom";
 .list{
+    padding-top: 1rem;
     counter-reset: etapes;
     padding-inline-start: 1rem;
+    & h1{
+        font-weight: 600;
+        font-size: 1.3rem;
+    }
     & ol{
         display: grid;
-        grid-row-gap: 1rem;
+        grid-row-gap: 1.5rem;
         padding-inline-start: 0;
         padding-inline-end: 1rem;
+        padding-bottom: 2.5rem;
 
     }
     & li{
@@ -16,22 +22,22 @@
             content: counter(etapes);
             counter-increment: etapes;
             color: white;
-            background-color: purple;
+            background-color: #9356DC;
             width: 1.5rem;
             height: 1.5rem;
             display: grid;
             place-items: center;
             border-radius: 50%;
             position: absolute;
-            bottom: 1rem;
-            left: -1rem;
+            bottom: 1.2rem;
+            left: -0.6rem;
         }
       font-family: Roboto;
-      font-weight: 700;
+      font-weight: 500;
       background-color: #f6f6f6;
-      padding: 1rem 2rem;
+      padding: 1.3rem 2rem;
       text-align: center;
-      gap: 1rem;
+      gap: 2rem;
       list-style: none;
       border-radius: 1rem;
       @include base-shadow;
@@ -39,8 +45,10 @@
           @include zoom;
         }
         & i.fas{
-            margin-right: 1rem;
+            position: absolute;
             color: gray;
+            left: 2rem;
+            top: 1.5rem;
         }
 
     }
