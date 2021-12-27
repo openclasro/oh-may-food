@@ -1,0 +1,54 @@
+@use "../utils/box-shadow";
+@use "../utils/color";
+.menus{
+    background-color: #f6f6f6;
+    padding: 1rem;
+    & h1{
+        font-weight: 600;
+        font-size: 1.3rem;
+    }
+}
+.menus__cards {
+        display: grid;
+        gap: 1rem;
+    
+    .card {
+        border-radius: 1rem;
+        background-color: white;
+        overflow: hidden;
+        text-decoration: none;
+        @include box-shadow.base-shadow;
+        &.Nouveau {
+            position: relative;
+        }
+        &.Nouveau::before{
+            content: "Nouveau";
+            position: absolute;
+            height: 2rem;
+            width: 5rem;
+            background-color: color.$color-tertiary;
+            display: grid;
+            place-items: center;
+            top: 1rem;
+            right: 1rem;
+            color: darken(color.$color-tertiary,50%);
+        }
+        & .card__imag {
+            height: 14rem;
+            width: 100%;
+            object-fit: cover;
+        }
+        & h2 {
+            color: black;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-left: 1rem;
+            margin-bottom: 0;
+        }
+        & p {
+            color: black;
+            margin-left: 1rem;
+            margin-top: 0.3rem;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-@import "../utils/box-shadow";
+@use"../utils/box-shadow";
 .explorer {
     padding: 1rem 2rem 4rem;
     text-align: center;
@@ -12,7 +12,7 @@
         font-size: 1rem;
         border: none;
         transition: all 200ms;
-        @include base-shadow
+        @include box-shadow.base-shadow
     }
     & button:hover {
         transform: scale(1.02);

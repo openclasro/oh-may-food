@@ -1,5 +1,6 @@
+@use "../utils/box-shadow";
+@use "../utils/zoom";
 
-@import "../utils/zoom";
 .list{
     padding-top: 1rem;
     counter-reset: etapes;
@@ -40,9 +41,9 @@
       gap: 2rem;
       list-style: none;
       border-radius: 1rem;
-      @include base-shadow;
+      @include box-shadow.base-shadow;
       &:hover{
-          @include zoom;
+          @include zoom.zoom;
         }
         & i.fas{
             position: absolute;
