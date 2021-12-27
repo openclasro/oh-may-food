@@ -2,7 +2,7 @@
 @use "../utils/color";
 .menus{
     background-color: #f6f6f6;
-    padding: 1rem;
+    padding: 1rem 1rem 5rem 1rem;
     & h1{
         font-weight: 600;
         font-size: 1.3rem;
@@ -13,6 +13,7 @@
         gap: 1rem;
     
     .card {
+        position: relative;
         border-radius: 1rem;
         background-color: white;
         overflow: hidden;
@@ -31,7 +32,7 @@
             place-items: center;
             top: 1rem;
             right: 1rem;
-            color: darken(color.$color-tertiary,50%);
+            color: #008766
         }
         & .card__imag {
             height: 14rem;
@@ -49,6 +50,13 @@
             color: black;
             margin-left: 1rem;
             margin-top: 0.3rem;
+        }
+        & i.far {
+            position: absolute;
+            right: 1rem;
+            bottom: 2rem;
+            font-size: 1.7rem;
+            color: black;
         }
     }
 }

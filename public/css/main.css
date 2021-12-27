@@ -112,7 +112,7 @@ body {
 
 .menus {
   background-color: #f6f6f6;
-  padding: 1rem;
+  padding: 1rem 1rem 5rem 1rem;
 }
 .menus h1 {
   font-weight: 600;
@@ -124,6 +124,7 @@ body {
   gap: 1rem;
 }
 .menus__cards .card {
+  position: relative;
   border-radius: 1rem;
   background-color: white;
   overflow: hidden;
@@ -143,7 +144,7 @@ body {
   place-items: center;
   top: 1rem;
   right: 1rem;
-  color: #1b6150;
+  color: #008766;
 }
 .menus__cards .card .card__imag {
   height: 14rem;
@@ -161,6 +162,43 @@ body {
   color: black;
   margin-left: 1rem;
   margin-top: 0.3rem;
+}
+.menus__cards .card i.far {
+  position: absolute;
+  right: 1rem;
+  bottom: 2rem;
+  font-size: 1.7rem;
+  color: black;
+}
+
+footer {
+  background-color: #353535;
+  padding: 0 2rem 1rem;
+}
+footer .logo {
+  width: 6rem;
+  filter: brightness(2000%);
+  top: 1.5rem;
+}
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  list-style: none;
+  padding-left: 0;
+  color: white;
+  margin-bottom: 0;
+}
+footer ul li {
+  font-weight: 400;
+}
+footer ul li i.fas {
+  font-size: 0.9rem;
+  margin-right: 0.3rem;
+}
+footer ul li a {
+  text-decoration: none;
+  color: whitefooter;
 }
 
 /*# sourceMappingURL=main.css.map */
