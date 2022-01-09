@@ -1,7 +1,9 @@
+@use "../utils/mixin";
+
 .header-logo{
     font-family: "shrikhand",cursive;
     height:60px;
     text-align: center;
-    border-bottom: 1px solid #637178;
-    box-shadow: 0 5px 5px #637178;
+    box-shadow: 2px 1px 8px -3px #110d0d;
+    position: relative;
 }

@@ -1,0 +1,203 @@
+@use "../utils/mixin";
+@use "../utils/color";
+@use "../utils/animation";
+
+
+   
+  
+
+
+header.resto::before{
+    @include mixin.font-awesome;
+    content: "\f060";
+    font-weight: 900;
+    left: 1rem;
+    top: 1.3rem;
+    color: black;
+}
+
+.resto__img{
+
+    width: 100%;
+    object-fit: cover;
+    height: 60vh;
+}
+.resto__titre{
+    position: relative;
+    margin-top: -2rem;
+    border-radius: 2rem 2rem 0 0;
+    background-color:color.$lightgrey;
+
+    & h1{
+    font-family: Shrikhand;
+    font-size: 1.5rem;
+    padding-left: 2rem;
+    margin: 0;
+    padding-top: 2rem;
+    height: 6rem;
+    position: relative;
+}
+
+    & ::before{
+        @include mixin.heart;
+        cursor: pointer;
+    }
+    & ::after {
+        @include mixin.heart;
+        font-weight: 900;
+        opacity: 0;
+        color:#FF79DA; 
+        max-height: 50%;
+    }
+    & :hover::after{
+        animation: after 3s ;
+        
+        transform-origin: bottom;
+          
+        
+   
+    }
+    @keyframes after {
+        0%{
+            transform: scale(0);
+            opacity: 1;
+        
+        }
+        50%{
+            transform: scale(1);
+            
+        
+
+        }
+        100%{
+            transform: scale(0);
+            opacity: 1;
+            
+        }
+    }
+   
+   
+
+} 
+
+
+.menu{
+    display: grid;
+    gap: 2rem;
+    background-color:color.$lightgrey;
+    padding: 1rem 1rem 0rem 1rem;
+}
+.menu__carte{
+    & h2{
+        font-family: Robotto;
+        font-weight: 300;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            top: 1.3rem;
+            left:0;
+            width: 2.5rem;
+            height: 0.15rem;
+            background-color:color.$color-tertiary;
+        }
+    }
+    .grid{
+        display: grid;
+        gap: 1rem;
+        
+        & .plat{
+            background-color: white;
+            display: flex;
+            overflow: hidden;
+            border-radius: 1rem;
+            cursor: pointer;
+            box-shadow: 2px 1px 8px -3px #110d0d;
+            animation: appear 1s;
+            animation-fill-mode:both;
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}){
+                    animation-delay: 100ms* $i;
+                }
+                
+            }
+            .plat__description{
+                    padding: 1rem;
+                    display: grid;
+                    gap: 0.3rem;
+                    
+                    
+                    & h3{
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        margin: 0;
+                        font-weight: 700;
+                        font-size: 0.9rem
+                    }
+                    & p{
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        margin: 0;
+                        font-size: 0.9rem;
+                    }
+                }
+                
+                & .prix{
+                    overflow: hidden;
+                    font-weight: bold;
+                    margin-left: auto;
+                    padding: 2.3rem 1rem 1rem 1rem;
+                    
+                    
+                }
+                
+                & .plat__animation{
+                    display: grid;
+                    place-items: center;
+                    background-color: color.$color-tertiary;
+                    margin-right: -4rem;
+                    width: 4rem;
+                    border-radius: 0 1rem 1rem 0;
+                    transition: all 0.5s;
+                    & i{
+                        display: grid;
+                        place-items:center;
+                        background: white;
+                        color: color.$color-tertiary;
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        border-radius: 50%;
+                        
+                        
+                        
+                    }
+                    
+                    
+                }
+                &:hover{ 
+                    .plat__animation{
+                        margin-right: 0;
+                    }
+                    i {
+                        animation: quarter-spin 0.5s ease;
+                    } 
+                }
+            }
+        }
+        
+}
+
+section.commander {
+    display: grid;
+    place-items: center;
+    height: 25vh;
+    background-color: #f3f3f3;
+    & button {
+        @include mixin.base-button;
+        
+    }
+}

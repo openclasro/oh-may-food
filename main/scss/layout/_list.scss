@@ -1,5 +1,4 @@
-@use "../utils/box-shadow";
-@use "../utils/zoom";
+@use "../utils/mixin";
 
 .list{
     padding-top: 1rem;
@@ -19,6 +18,17 @@
     }
     & li{
         position: relative;
+        font-family: Roboto;
+        font-weight: 500;
+        background-color: #f6f6f6;
+        padding: 1.3rem 2rem;
+        text-align: center;
+        gap: 2rem;
+        list-style: none;
+        border-radius: 1rem;
+        cursor: pointer;
+        box-shadow: 2px 1px 8px -3px #110d0d;
+        
         &::before{
             content: counter(etapes);
             counter-increment: etapes;
@@ -33,23 +43,17 @@
             bottom: 1.2rem;
             left: -0.6rem;
         }
-      font-family: Roboto;
-      font-weight: 500;
-      background-color: #f6f6f6;
-      padding: 1.3rem 2rem;
-      text-align: center;
-      gap: 2rem;
-      list-style: none;
-      border-radius: 1rem;
-      @include box-shadow.base-shadow;
-      &:hover{
-          @include zoom.zoom;
-        }
         & i.fas{
             position: absolute;
-            color: gray;
+            color: gray; 
             left: 2rem;
             top: 1.5rem;
+        }
+        &:hover{
+          & i.fas{
+              color:#9356DC ;
+          }
+        
         }
 
     }

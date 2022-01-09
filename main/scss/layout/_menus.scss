@@ -1,7 +1,9 @@
-@use "../utils/box-shadow";
+
 @use "../utils/color";
+@use "../utils/mixin";
+@use "../utils/_animation";
 .menus{
-    background-color: #f6f6f6;
+    background-color:color.$lightgrey;
     padding: 1rem 1rem 5rem 1rem;
     & h1{
         font-weight: 600;
@@ -18,7 +20,7 @@
         background-color: white;
         overflow: hidden;
         text-decoration: none;
-        @include box-shadow.base-shadow;
+        box-shadow: 2px 1px 8px -3px #110d0d;
         &.Nouveau {
             position: relative;
         }
@@ -50,13 +52,25 @@
             color: black;
             margin-left: 1rem;
             margin-top: 0.3rem;
+            
         }
-        & i.far {
-            position: absolute;
-            right: 1rem;
-            bottom: 2rem;
-            font-size: 1.7rem;
-            color: black;
+        & ::before{
+           @include mixin.heart;
         }
+        & ::after {
+            @include mixin.heart;
+            font-weight: 900;
+            transform: scale(0);
+            color:#FF79DA ;; 
+            transition: transform 500ms ease-in-out;  
+        }
+        & :hover::after{
+            transform-origin:bottom;
+            
+            transform:scale(1);
+               
+        }
+        
+        
     }
 }
