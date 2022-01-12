@@ -38,36 +38,28 @@ header.resto::before{
     position: relative;
 }
 
-    & ::before{
+    &::before{
         @include mixin.heart;
         cursor: pointer;
     }
-    & ::after {
+    &::after {
         @include mixin.heart;
         font-weight: 900;
         opacity: 0;
         color:#FF79DA; 
         max-height: 50%;
     }
-    & :hover::after{
-        animation: after 3s ;
-        
-        transform-origin: bottom;
-          
-        
-   
-    }
     @keyframes after {
         0%{
             transform: scale(0);
             opacity: 1;
-        
+            
         }
         50%{
-            transform: scale(1);
+            transform: scale(1.02);
             
-        
-
+            
+            
         }
         100%{
             transform: scale(0);
@@ -75,9 +67,17 @@ header.resto::before{
             
         }
     }
-   
-   
-
+    
+    
+    
+    &:hover::after{
+        animation: after 2s ;
+        
+        transform-origin: bottom;
+          
+        
+    
+    }
 } 
 
 
@@ -86,6 +86,11 @@ header.resto::before{
     gap: 2rem;
     background-color:color.$lightgrey;
     padding: 1rem 1rem 0rem 1rem;
+    @media (min-width:760px) {
+        display: flex;
+        justify-content: space-around;
+        
+    }
 }
 .menu__carte{
     & h2{
@@ -108,7 +113,9 @@ header.resto::before{
         display: grid;
         gap: 1rem;
         
+        
         & .plat{
+            
             background-color: white;
             display: flex;
             overflow: hidden;
@@ -117,7 +124,8 @@ header.resto::before{
             box-shadow: 2px 1px 8px -3px #110d0d;
             animation: appear 1s;
             animation-fill-mode:both;
-            @for $i from 1 through 3 {
+            
+            @for $i from 1 through 4 {
                 &:nth-child(#{$i}){
                     animation-delay: 100ms* $i;
                 }
@@ -135,7 +143,7 @@ header.resto::before{
                         white-space: nowrap;
                         margin: 0;
                         font-weight: 700;
-                        font-size: 0.9rem
+                        font-size: 0.9rem;
                     }
                     & p{
                         overflow: hidden;
@@ -199,5 +207,9 @@ section.commander {
     & button {
         @include mixin.base-button;
         
+    }
+    & :hover{
+        background: linear-gradient(to top,#c986d4, #c2bcc2);
+        box-shadow: 2px 10px 8px -3px #110d0d;
     }
 }

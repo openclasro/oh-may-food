@@ -73,14 +73,20 @@ body {
   left: 0px;
   z-index: -1;
 }
-.explorer button:hover::after {
+.explorer button:hover {
   background: linear-gradient(to top, #c986d4, #c2bcc2);
+  box-shadow: 2px 10px 8px -3px #110d0d;
 }
 
 .list {
   padding-top: 1rem;
   counter-reset: etapes;
   padding-inline-start: 1rem;
+}
+@media (min-width: 760px) {
+  .list {
+    padding: 1rem 2rem;
+  }
 }
 .list h1 {
   font-weight: 600;
@@ -92,6 +98,12 @@ body {
   padding-inline-start: 0;
   padding-inline-end: 1rem;
   padding-bottom: 2.5rem;
+}
+@media (min-width: 760px) {
+  .list ol {
+    display: flex;
+    gap: 6rem;
+  }
 }
 .list li {
   position: relative;
@@ -105,6 +117,11 @@ body {
   border-radius: 1rem;
   cursor: pointer;
   box-shadow: 2px 1px 8px -3px #110d0d;
+}
+@media (min-width: 760px) {
+  .list li {
+    flex-grow: 1;
+  }
 }
 .list li::before {
   content: counter(etapes);
@@ -120,11 +137,25 @@ body {
   bottom: 1.2rem;
   left: -0.6rem;
 }
+@media (min-width: 760px) {
+  .list li::before {
+    bottom: 1.2rem;
+  }
+}
 .list li i.fas {
   position: absolute;
   color: gray;
   left: 2rem;
   top: 1.5rem;
+}
+@media (min-width: 760px) {
+  .list li i.fas {
+    left: 1.3rem;
+    top: 1.4rem;
+  }
+}
+.list li:hover {
+  box-shadow: 2px 10px 8px -3px #110d0d;
 }
 .list li:hover i.fas {
   color: #9356DC;
@@ -152,6 +183,11 @@ body {
   background-color: #f3f3f3;
   padding: 1rem 1rem 5rem 1rem;
 }
+@media (min-width: 760px) {
+  .menus {
+    padding: 1rem 2rem 5rem 2rem;
+  }
+}
 .menus h1 {
   font-weight: 600;
   font-size: 1.3rem;
@@ -160,6 +196,13 @@ body {
 .menus__cards {
   display: grid;
   gap: 1rem;
+}
+@media (min-width: 760px) {
+  .menus__cards {
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .menus__cards .card {
   position: relative;
@@ -232,9 +275,9 @@ body {
   transform: scale(0);
   color: #FF79DA;
   transition: transform 500ms ease-in-out;
-}
-.menus__cards .card :hover::after {
   transform-origin: bottom;
+}
+.menus__cards :hover::after {
   transform: scale(1);
 }
 
@@ -305,7 +348,7 @@ header.resto::before {
   height: 6rem;
   position: relative;
 }
-.resto__titre ::before {
+.resto__titre::before {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -320,7 +363,7 @@ header.resto::before {
   font-size: 1.7rem;
   cursor: pointer;
 }
-.resto__titre ::after {
+.resto__titre::after {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -338,22 +381,22 @@ header.resto::before {
   color: #FF79DA;
   max-height: 50%;
 }
-.resto__titre :hover::after {
-  animation: after 3s;
-  transform-origin: bottom;
-}
 @keyframes after {
   0% {
     transform: scale(0);
     opacity: 1;
   }
   50% {
-    transform: scale(1);
+    transform: scale(1.02);
   }
   100% {
     transform: scale(0);
     opacity: 1;
   }
+}
+.resto__titre:hover::after {
+  animation: after 2s;
+  transform-origin: bottom;
 }
 
 .menu {
@@ -361,6 +404,12 @@ header.resto::before {
   gap: 2rem;
   background-color: #f3f3f3;
   padding: 1rem 1rem 0rem 1rem;
+}
+@media (min-width: 760px) {
+  .menu {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 .menu__carte h2 {
@@ -401,6 +450,9 @@ header.resto::before {
 }
 .menu__carte .grid .plat:nth-child(3) {
   animation-delay: 300ms;
+}
+.menu__carte .grid .plat:nth-child(4) {
+  animation-delay: 400ms;
 }
 .menu__carte .grid .plat .plat__description {
   padding: 1rem;
@@ -490,8 +542,9 @@ section.commander button::after {
   left: 0px;
   z-index: -1;
 }
-section.commander button:hover::after {
+section.commander :hover {
   background: linear-gradient(to top, #c986d4, #c2bcc2);
+  box-shadow: 2px 10px 8px -3px #110d0d;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -5,6 +5,10 @@
 .menus{
     background-color:color.$lightgrey;
     padding: 1rem 1rem 5rem 1rem;
+    @media (min-width:760px) {
+        padding: 1rem 2rem 5rem 2rem;
+        
+    }
     & h1{
         font-weight: 600;
         font-size: 1.3rem;
@@ -13,6 +17,14 @@
 .menus__cards {
         display: grid;
         gap: 1rem;
+        @media (min-width:760px) {
+            display: grid;
+            gap: 5rem;
+            grid-template-columns: repeat(2,1fr);
+            
+        }
+    
+    
     
     .card {
         position: relative;
@@ -54,6 +66,7 @@
             margin-top: 0.3rem;
             
         }
+
         & ::before{
            @include mixin.heart;
         }
@@ -63,14 +76,14 @@
             transform: scale(0);
             color:#FF79DA ;; 
             transition: transform 500ms ease-in-out;  
-        }
-        & :hover::after{
             transform-origin:bottom;
-            
-            transform:scale(1);
-               
         }
         
         
+    }
+    & :hover::after{
+        
+        transform:scale(1);
+           
     }
 }
