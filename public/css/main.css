@@ -10,6 +10,11 @@ body {
   margin: 0px;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .header-logo {
   font-family: "shrikhand", cursive;
   height: 60px;
@@ -78,6 +83,56 @@ body {
   box-shadow: 2px 10px 8px -3px #110d0d;
 }
 
+.loader {
+  background-color: #ffff;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  opacity: 0.9;
+  animation: dispear 3s ease-in-out;
+  animation-fill-mode: both;
+}
+.loader::after {
+  content: "";
+  height: 50px;
+  width: 50px;
+  border: 5px solid #f3f3f3;
+  border-bottom: 5px solid #8e44ad;
+  border-top: 5px solid #2c3e50;
+  border-left: 5px solid #f39c12;
+  border-right: 5px solid #2ecc71;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  animation: spin 1.5s linear;
+}
+
+@keyframes dispear {
+  0% {
+    transform: translateY(1);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+    z-index: 0;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .list {
   padding-top: 1rem;
   counter-reset: etapes;
@@ -139,7 +194,12 @@ body {
 }
 @media (min-width: 760px) {
   .list li::before {
-    bottom: 1.2rem;
+    top: 1.8rem;
+  }
+}
+@media (min-width: 984px) {
+  .list li::before {
+    top: 1.2rem;
   }
 }
 .list li i.fas {
@@ -151,7 +211,12 @@ body {
 @media (min-width: 760px) {
   .list li i.fas {
     left: 1.3rem;
-    top: 1.4rem;
+    top: 2rem;
+  }
+}
+@media (min-width: 984px) {
+  .list li i.fas {
+    top: 1.5em;
   }
 }
 .list li:hover {
@@ -244,40 +309,29 @@ body {
   margin-left: 1rem;
   margin-top: 0.3rem;
 }
-.menus__cards .card ::before {
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  position: absolute;
-  font-weight: 400;
-  content: "\f004";
+.menus__cards .card .heart {
+  width: 2rem;
+  height: 2rem;
   right: 1rem;
   bottom: 2rem;
-  font-size: 1.7rem;
+  position: absolute;
 }
-.menus__cards .card ::after {
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
+.menus__cards .card .heart i.far {
   position: absolute;
-  font-weight: 400;
-  content: "\f004";
-  right: 1rem;
-  bottom: 2rem;
-  font-size: 1.7rem;
-  font-weight: 900;
+  font-size: 2rem;
+}
+.menus__cards .card .heart i.fas {
+  position: absolute;
+  font-size: 2rem;
+  color: transparent;
   transform: scale(0);
-  color: #FF79DA;
-  transition: transform 500ms ease-in-out;
+  transition: transform 1s ease-in-out;
+  background-image: linear-gradient(to top, #9556dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
   transform-origin: bottom;
 }
-.menus__cards :hover::after {
+.menus__cards .card .heart:hover i.fas {
   transform: scale(1);
 }
 
@@ -298,6 +352,14 @@ footer ul {
   padding-left: 0;
   color: white;
   margin-bottom: 0;
+}
+@media (min-width: 765px) {
+  footer ul {
+    display: flex;
+    gap: 4rem;
+    flex-direction: revert;
+    padding-bottom: 0.5rem;
+  }
 }
 footer ul li {
   font-weight: 400;
@@ -346,57 +408,31 @@ header.resto::before {
   margin: 0;
   padding-top: 2rem;
   height: 6rem;
-  position: relative;
 }
-.resto__titre::before {
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  position: absolute;
-  font-weight: 400;
-  content: "\f004";
+.resto__titre .heart {
+  width: 2rem;
+  height: 2rem;
   right: 1rem;
   bottom: 2rem;
-  font-size: 1.7rem;
-  cursor: pointer;
-}
-.resto__titre::after {
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
   position: absolute;
-  font-weight: 400;
-  content: "\f004";
-  right: 1rem;
-  bottom: 2rem;
-  font-size: 1.7rem;
-  font-weight: 900;
-  opacity: 0;
-  color: #FF79DA;
-  max-height: 50%;
 }
-@keyframes after {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(0);
-    opacity: 1;
-  }
+.resto__titre .heart i.far {
+  position: absolute;
+  font-size: 2rem;
 }
-.resto__titre:hover::after {
-  animation: after 2s;
+.resto__titre .heart i.fas {
+  position: absolute;
+  font-size: 2rem;
+  color: transparent;
+  transform: scale(0);
+  transition: transform 1s ease-in-out;
+  background-image: linear-gradient(to top, #9556dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
   transform-origin: bottom;
+}
+.resto__titre .heart:hover i.fas {
+  transform: scale(1);
 }
 
 .menu {
@@ -405,13 +441,16 @@ header.resto::before {
   background-color: #f3f3f3;
   padding: 1rem 1rem 0rem 1rem;
 }
-@media (min-width: 760px) {
+@media (min-width: 600px) {
   .menu {
     display: flex;
     justify-content: space-around;
   }
 }
 
+.menu__carte {
+  width: 30%;
+}
 .menu__carte h2 {
   font-family: Robotto;
   font-weight: 300;

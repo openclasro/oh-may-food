@@ -53,37 +53,60 @@
             width: 100%;
             object-fit: cover;
         }
-        & h2 {
-            color: black;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-left: 1rem;
-            margin-bottom: 0;
-        }
-        & p {
-            color: black;
-            margin-left: 1rem;
-            margin-top: 0.3rem;
-            
-        }
+        
 
-        & ::before{
-           @include mixin.heart;
-        }
-        & ::after {
-            @include mixin.heart;
-            font-weight: 900;
-            transform: scale(0);
-            color:#FF79DA ;; 
-            transition: transform 500ms ease-in-out;  
-            transform-origin:bottom;
-        }
+            & h2 {
+                color: black;
+                font-size: 1rem;
+                font-weight: 600;
+                margin-left: 1rem;
+                margin-bottom: 0;
+            }
+            & p {
+                color: black;
+                margin-left: 1rem;
+                margin-top: 0.3rem;
+                
+            }
+            & .heart{
+
+                width: 2rem;
+                height: 2rem;
+                right: 1rem;
+                bottom: 2rem;
+                position: absolute;
+            
+            & i.far{
+                position: absolute;
+                font-size: 2rem;
+            }
+            & i.fas{
+                    
+                    position: absolute;
+                    
+                    font-size: 2rem;
+                    color:transparent;
+                    transform: scale(0);
+                    transition: transform 1s ease-in-out;
+                    background-image: linear-gradient(to top, #9556dc , #ff79da);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    transform-origin: bottom;
+                }
+                
+                
+                &:hover i.fas {
+                    transform: scale(1);
+                
+                    
+                    
+                }
+            }
+        
+
+        
         
         
     }
-    & :hover::after{
-        
-        transform:scale(1);
-           
-    }
+    
 }

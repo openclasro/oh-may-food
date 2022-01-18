@@ -16,6 +16,13 @@ footer {
         padding-left: 0;
         color: white;
         margin-bottom: 0;
+        @media (min-width:765px) {
+            display: flex;
+            gap: 4rem;
+            flex-direction:revert;
+            padding-bottom: 0.5rem;
+        
+        }
         & li{
             font-weight: 400;
             i.fas {
