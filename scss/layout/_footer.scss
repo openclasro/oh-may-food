@@ -16,6 +16,7 @@ footer {
         padding-left: 0;
         color: white;
         margin-bottom: 0;
+        
         @media (min-width:765px) {
             display: flex;
             gap: 4rem;
@@ -24,6 +25,7 @@ footer {
         
         }
         & li{
+            cursor: pointer;
             font-weight: 400;
             i.fas {
                 font-size: 0.9rem;
@@ -33,6 +35,7 @@ footer {
             a {
                 text-decoration: none;
                 color: white;
+                
 
             }
         }

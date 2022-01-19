@@ -52,12 +52,7 @@
     }
 }
 @keyframes dispear {
-    0%{
-        transform: translateY(1);
-        
-    
-
-    }
+   
     100%{
         transform: translateY(0);
         opacity: 0;

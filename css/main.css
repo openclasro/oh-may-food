@@ -113,9 +113,6 @@ a {
 }
 
 @keyframes dispear {
-  0% {
-    transform: translateY(1);
-  }
   100% {
     transform: translateY(0);
     opacity: 0;
@@ -359,6 +356,7 @@ footer ul {
   }
 }
 footer ul li {
+  cursor: pointer;
   font-weight: 400;
 }
 footer ul li i.fas {
@@ -445,11 +443,13 @@ header.resto::before {
   }
 }
 
-.menu__carte {
-  width: 30%;
+@media (min-width: 600px) {
+  .menu__carte {
+    width: 100%;
+  }
 }
 .menu__carte h2 {
-  font-family: Robotto;
+  font-family: Roboto;
   font-weight: 300;
   font-size: 1rem;
   margin-bottom: 1.5rem;
