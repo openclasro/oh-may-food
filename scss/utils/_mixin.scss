@@ -3,7 +3,6 @@
 @mixin zoom {
     transform: scale(1.02);
 }
-
      
 @mixin font-awesome {
     display: inline-block;
@@ -16,14 +15,9 @@
     font-weight: 400;
 }
 
-@mixin heart {
-    @include font-awesome;
-    content: "\f004";
-    right: 1rem;
-    bottom: 2rem;
-    font-size: 1.7rem;
+
     
-}
+
 @mixin base-button {
     position: relative;
     z-index: 1;
@@ -37,30 +31,6 @@
     overflow: hidden;
     cursor: pointer;
     box-shadow: 2px 1px 8px -3px #110d0d;
-    &::before{
-
-        content: "";
-        position: absolute;
-        top:0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-    }
-    &::after {
-        content: "";
-        position: absolute;
-        top:0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        z-index: -1;
-       
-    
-        
-       
-    }
-    
-    
 
 }
 

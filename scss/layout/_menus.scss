@@ -15,98 +15,86 @@
     }
 }
 .menus__cards {
-        display: grid;
-        gap: 1rem;
-        @media (min-width:760px) {
-            display: grid;
-            gap: 5rem;
-            grid-template-columns: repeat(2,1fr);
-            
-        }
-    
-    
-    
-    .card {
-        position: relative;
-        border-radius: 1rem;
-        background-color: white;
-        overflow: hidden;
-        text-decoration: none;
-        box-shadow: 2px 1px 8px -3px #110d0d;
-        &.Nouveau {
-            position: relative;
-        }
-        &.Nouveau::before{
-            content: "Nouveau";
-            position: absolute;
-            height: 2rem;
-            width: 5rem;
-            background-color: color.$color-tertiary;
-            display: grid;
-            place-items: center;
-            top: 1rem;
-            right: 1rem;
-            color: #008766
-        }
-        & .card__imag {
-            height: 14rem;
-            width: 100%;
-            object-fit: cover;
-        }
-        
-
-            & h2 {
-                color: black;
-                font-size: 1rem;
-                font-weight: 600;
-                margin-left: 1rem;
-                margin-bottom: 0;
-            }
-            & p {
-                color: black;
-                margin-left: 1rem;
-                margin-top: 0.3rem;
-                
-            }
-            & .heart{
-
-                width: 2rem;
-                height: 2rem;
-                right: 1rem;
-                bottom: 2rem;
-                position: absolute;
-            
-            & i.far{
-                position: absolute;
-                font-size: 2rem;
-            }
-            & i.fas{
-                    
-                    position: absolute;
-                    
-                    font-size: 2rem;
-                    color:transparent;
-                    transform: scale(0);
-                    transition: transform 1s ease-in-out;
-                    background-image: linear-gradient(to top, #9556dc , #ff79da);
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    transform-origin: bottom;
-                }
-                
-                
-                &:hover i.fas {
-                    transform: scale(1);
-                
-                    
-                    
-                }
-            }
-        
-
-        
-        
-        
+    display: grid;
+    gap: 1rem;
+    @media (min-width:760px) {
+    display: grid;
+    gap: 5rem;
+        grid-template-columns: repeat(2,1fr);
     }
     
+.card {
+    position: relative;
+    border-radius: 1rem;
+    background-color: white;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 2px 1px 8px -3px #110d0d;
+    &.Nouveau {
+        position: relative;
+    }
+    &.Nouveau::before{
+        content: "Nouveau";
+        position: absolute;
+        height: 2rem;
+        width: 5rem;
+        background-color: color.$color-tertiary;
+        display: grid;
+        place-items: center;
+        top: 1rem;
+        right: 1rem;
+        color: #008766
+    }
+    & .card__imag {
+        height: 10rem;
+        width: 100%;
+        object-fit: cover;
+    }
+        
+
+    & h2 {
+        color: black;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-left: 1rem;
+        margin-bottom: 0;
+        }
+        & p {
+            color: black;
+            margin-left: 1rem;
+            margin-top: 0.3rem;
+                
+        }
+        & .heart{
+        width: 2rem;
+        height: 2rem;
+        right: 1rem;
+        bottom: 2rem;
+        position: absolute;
+            
+        & i.far{
+            position: absolute;
+            font-size: 2rem;
+        }
+        & i.fas{        
+            position: absolute;
+            font-size: 2rem;
+            color:transparent;
+            transform: scale(0);
+            transition: transform 1s ease-in-out;
+            background-image: linear-gradient(to top, #9556dc , #ff79da);
+            background-clip: text;
+            -webkit-background-clip: text;
+            transform-origin: bottom;
+            }
+                
+                
+            &:hover i.fas {
+                transform: scale(1);
+                
+                    
+                    
+            }
+        }
+    }
 }

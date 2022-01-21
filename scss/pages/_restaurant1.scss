@@ -1,10 +1,7 @@
 @use "../utils/mixin";
 @use "../utils/color";
 @use "../utils/animation";
-
-
-   
-  
+@use "../layout/footer";
 
 
 header.resto::before{
@@ -38,7 +35,6 @@ header.resto::before{
     
 }
 & .heart{
-
     width: 2rem;
     height: 2rem;
     right: 1rem;
@@ -50,9 +46,7 @@ header.resto::before{
     font-size: 2rem;
 }
 & i.fas{
-        
         position: absolute;
-        
         font-size: 2rem;
         color:transparent;
         transform: scale(0);
@@ -114,90 +108,82 @@ header.resto::before{
         gap: 1rem;
         
         
-        & .plat{
+    & .plat{
             
-            background-color: white;
-            display: flex;
-            overflow: hidden;
-            border-radius: 1rem;
-            cursor: pointer;
-            box-shadow: 2px 1px 8px -3px #110d0d;
-            animation: appear 1s;
-            animation-fill-mode:both;
+        background-color: white;
+        display: flex;
+        overflow: hidden;
+        border-radius: 1rem;
+        cursor: pointer;
+        box-shadow: 2px 1px 8px -3px #110d0d;
+        animation: appear 2s;
+        animation-fill-mode:both;
             
-            @for $i from 1 through 4 {
-                &:nth-child(#{$i}){
-                    animation-delay: 100ms* $i;
-                }
-                
+        @for $i from 1 through 4 {
+            &:nth-child(#{$i}){
+                animation-delay: 100ms* $i;
             }
+                
+        }
             
-            .plat__description{
-                    padding: 1rem;
-                    display: grid;
-                    gap: 0.3rem;
-                   
-                    
-                    
-                    
-                    & h3{
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        margin: 0;
-                        font-weight: 700;
-                        font-size: 0.9rem;
+        .plat__description{
+            width: 60%;
+            padding: 1rem;
+            display: grid;
+            gap: 0.3rem;
+
+        & h3{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin: 0;
+            font-weight: 700;
+             font-size: 0.9rem;
                         
-                    }
-                    & p{
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        margin: 0;
-                        font-size: 0.9rem;
+        }
+        & p{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin: 0;
+            font-size: 0.9rem;
                         
-                    }
-                }
+        }
+        }
                 
-                & .prix{
-                    overflow: hidden;
-                    font-weight: bold;
-                    margin-left: auto;
-                    padding: 2.3rem 1rem 1rem 1rem;
+        & .prix{
+            overflow: hidden;
+            font-weight: bold;
+            margin-left: auto;
+            padding: 2.3rem 1rem 1rem 1rem;
                     
-                    
-                }
+        }
                 
-                & .plat__animation{
-                    display: grid;
-                    place-items: center;
-                    background-color: color.$color-tertiary;
-                    margin-right: -4rem;
-                    width: 4rem;
-                    border-radius: 0 1rem 1rem 0;
-                    transition: all 0.5s;
-                    & i{
-                        display: grid;
-                        place-items:center;
-                        background: white;
-                        color: color.$color-tertiary;
-                        width: 1.5rem;
-                        height: 1.5rem;
-                        border-radius: 50%;
-                        
-                        
-                        
-                    }
-                    
-                    
+        & .plat__animation{
+            display: grid;
+            place-items: center;
+            background-color: color.$color-tertiary;
+            margin-right: -4rem;
+            width: 4rem;
+            border-radius: 0 1rem 1rem 0;
+            transition: all 0.5s;
+            & i{
+                display: grid;
+                place-items:center;
+                background: white;
+                color: color.$color-tertiary;
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+            }    
+            }
+            &:hover{ 
+                .plat__animation{
+                    margin-right: 0;
                 }
-                &:hover{ 
-                    .plat__animation{
-                        margin-right: 0;
-                    }
-                    i {
-                        animation: quarter-spin 0.5s ease;
-                    } 
+                i {
+                    animation: quarter-spin 0.5s ease;
+                } 
                 }
             }
         }
